@@ -36,22 +36,22 @@ namespace Deforestation
 
 		#region Fields
 		[Header("Player")]
-		[SerializeField] private CharacterController _player;
-		[SerializeField] private HealthSystem _playerHealth;
-		[SerializeField] private Inventory _inventory;
-		[SerializeField] private InteractionSystem _interactionSystem;
+		[SerializeField] protected CharacterController _player;
+		[SerializeField] protected HealthSystem _playerHealth;
+		[SerializeField] protected Inventory _inventory;
+		[SerializeField] protected InteractionSystem _interactionSystem;
 
 		[Header("Camera")]
-		[SerializeField] private CinemachineVirtualCamera _virtualCamera;
-		[SerializeField] private Transform _playerFollow;
-		[SerializeField] private Transform _machineFollow;
+		[SerializeField] protected CinemachineVirtualCamera _virtualCamera;
+		[SerializeField] protected Transform _playerFollow;
+		[SerializeField] protected Transform _machineFollow;
 
 		[Header("Machine")]
-		[SerializeField] private MachineController _machine;
+		[SerializeField] protected MachineController _machine;
 		[Header("UI")]
-		[SerializeField] private UIGameController _uiController;
+		[SerializeField] protected UIGameController _uiController;
 		[Header("Trees Terrain")]
-		[SerializeField] private TreeTerrainController _terrainController;
+		[SerializeField] protected TreeTerrainController _terrainController;
 
 		private bool _machineModeOn;
 		#endregion
