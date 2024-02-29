@@ -29,7 +29,7 @@ namespace Deforestation.Interaction
 			return _interactableInfo;
 		}
 
-		public void Interact()
+		public virtual void Interact()
 		{
 			if(_type == MachineInteractionType.Door)
 			{
