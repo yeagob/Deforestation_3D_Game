@@ -20,7 +20,8 @@ namespace Deforestation
 		private void Awake()
 		{
 			_health = GetComponent<HealthSystem>();
-			_health.OnDeath += Die;
+			if (_health!= null)
+				_health.OnDeath += Die;
 		}
 
 		private void Die()

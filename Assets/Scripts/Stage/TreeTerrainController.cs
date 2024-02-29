@@ -12,7 +12,7 @@ namespace Deforestation
 		#endregion
 
 		#region Fields
-		[SerializeField] private GameObject _treeDetectionPrefab;
+		[SerializeField] private Tree _treeDetectionPrefab;
 		[SerializeField] private Tree _treePrefab;
 		private TreeInstance[] _trees;
 		Terrain _terrain;
@@ -34,7 +34,7 @@ namespace Deforestation
 			{
 				TreeInstance tree = _trees[i];
 				Vector3 treeWorldPos = TreeToWorldPosition(tree);
-				Tree treeDetector = Instantiate(_treePrefab, treeWorldPos, Quaternion.identity);
+				Tree treeDetector = Instantiate(_treeDetectionPrefab, treeWorldPos, Quaternion.identity);
 				treeDetector.transform.parent = transform;
 				treeDetector.Index = i;
 			}
