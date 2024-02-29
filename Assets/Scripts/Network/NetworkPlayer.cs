@@ -100,6 +100,7 @@ namespace Deforestation.Network
 			_anim.SetTrigger("Die");
 			DisconectPlayer();
 			this.enabled = false;
+
 		}
 
 		private void Hit(float obj)

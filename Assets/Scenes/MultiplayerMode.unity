@@ -1235,6 +1235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589a505fec9bb7b41a2d5fa4ec20a837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionPrefab: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef,
+    type: 3}
   _ui: {fileID: 1038930275}
   _uIGameController: {fileID: 1038930280}
   _spawnPoints:
@@ -1467,7 +1469,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _treeDetectionPrefab
       value: 
-      objectReference: {fileID: 2181077740337105453, guid: 3e6eebddf66264c4290f453c6db7b389,
+      objectReference: {fileID: -8238635280205922727, guid: 3e6eebddf66264c4290f453c6db7b389,
         type: 3}
     - target: {fileID: 3721928628444254172, guid: 798492b75547dec4a809a150dcd0db77,
         type: 3}
