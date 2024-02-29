@@ -1111,7 +1111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd1ef26ac1ec9f478cc8a17202b6b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _treeDetectionPrefab: {fileID: 1892976754920844703, guid: 3e6eebddf66264c4290f453c6db7b389,
+  _treeDetectionPrefab: {fileID: -8238635280205922727, guid: 3e6eebddf66264c4290f453c6db7b389,
     type: 3}
   _treePrefab: {fileID: -4855087632220457668, guid: c613a74bd10b8a24e8648529b1c9a412,
     type: 3}

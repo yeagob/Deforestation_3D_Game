@@ -14,10 +14,10 @@ namespace Deforestation.Interaction
 		#endregion
 
 		#region Fields
-		[SerializeField] private MachineInteractionType _type;
-		[SerializeField] private Transform _target;
+		[SerializeField] protected MachineInteractionType _type;
+		[SerializeField] protected Transform _target;
 
-		[SerializeField] private InteractableInfo _interactableInfo;
+		[SerializeField] protected InteractableInfo _interactableInfo;
 
 
 		#endregion
@@ -31,7 +31,7 @@ namespace Deforestation.Interaction
 
 		public virtual void Interact()
 		{
-			if(_type == MachineInteractionType.Door)
+			if (_type == MachineInteractionType.Door)
 			{
 				//Move Door
 				transform.position = _target.position;

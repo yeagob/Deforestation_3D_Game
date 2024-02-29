@@ -26,7 +26,7 @@ namespace Deforestation
 			{
 				return _machineModeOn;
 			}
-			private set 
+			private set
 			{
 				_machineModeOn = value;
 				OnMachineModeChange?.Invoke(_machineModeOn);
@@ -64,19 +64,17 @@ namespace Deforestation
 			_playerHealth.OnHealthChanged += _uiController.UpdatePlayerHealth;
 			_machine.HealthSystem.OnHealthChanged += _uiController.UpdateMachineHealth;
 			MachineModeOn = false;
-
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
-
 		}
 		#endregion
 
 		#region Public Methods
 		public void TeleportPlayer(Vector3 target)
-		{			
+		{
 			_player.enabled = false;
 			_player.transform.position = target;
 			_player.enabled = true;
@@ -93,7 +91,7 @@ namespace Deforestation
 			if (machineMode)
 			{
 				//Start Driving
-				if ( Inventory.HasResource(RecolectableType.HyperCrystal))
+				if (Inventory.HasResource(RecolectableType.HyperCrystal))
 					_machine.StartDriving(machineMode);
 
 				_player.transform.parent = _machineFollow;
@@ -101,9 +99,17 @@ namespace Deforestation
 				Cursor.lockState = CursorLockMode.None;
 				//Camera
 				_virtualCamera.Follow = _machineFollow;
+
+				_machine.enabled = true;
+				_machine.WeaponController.enabled = true;
+				_machine.GetComponent<MachineMovement>().enabled = true;
+
 			}
 			else
 			{
+				_machine.enabled = false;
+				_machine.WeaponController.enabled = false;
+				_machine.GetComponent<MachineMovement>().enabled = false;
 				_player.transform.parent = null;
 
 				//Camera

@@ -36,6 +36,13 @@ namespace Deforestation
 			OnHealthChanged?.Invoke(_currentHealth);
 		}
 
+		public void SetHealth(float value)
+		{
+			_currentHealth = value;
+			_currentHealth = Mathf.Min(_currentHealth, _maxHealth);
+			OnHealthChanged?.Invoke(_currentHealth);
+		}
+
 		private void Die()
 		{
 			OnDeath?.Invoke();

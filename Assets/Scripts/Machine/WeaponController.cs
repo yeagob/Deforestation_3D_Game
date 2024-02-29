@@ -43,12 +43,17 @@ namespace Deforestation.Machine.Weapon
 
 			if (Input.GetMouseButtonUp(0) && GameController.Instance.MachineModeOn && GameController.Instance.Inventory.UseResource(Recolectables.RecolectableType.SuperCrystal))
 			{
-				transform.LookAt(hit.point);
-				Instantiate(_bulletPrefab, _spawnPoint.transform.position, _spawnPoint.transform.rotation);
-				_smokeShoot1.SetActive(true);
-				_smokeShoot2.SetActive(true);
-				OnMachineShoot?.Invoke();
+				Shoot(hit.point);
 			}
+		}
+
+		public void Shoot(Vector3 lookAtPoint)
+		{
+			transform.LookAt(lookAtPoint);
+			Instantiate(_bulletPrefab, _spawnPoint.transform.position, _spawnPoint.transform.rotation);
+			_smokeShoot1.SetActive(true);
+			_smokeShoot2.SetActive(true);
+			OnMachineShoot?.Invoke();
 		}
 		#endregion
 
