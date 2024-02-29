@@ -11683,9 +11683,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5672707069889839904}
   - component: {fileID: 2421302454060502510}
+  - component: {fileID: 3429908263805911436}
   - component: {fileID: 3627660020212214118}
   - component: {fileID: 2511575350588810524}
-  - component: {fileID: 3429908263805911436}
   - component: {fileID: 5625739484875177652}
   - component: {fileID: 2782172101916695108}
   - component: {fileID: 3491159985285105115}
@@ -11730,6 +11730,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _machine: {fileID: 3429908263805911436}
   _machineFollow: {fileID: 1775273085626455341}
+--- !u!114 &3429908263805911436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040180727007795610}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8c56fc5be72bf43afc2508cfa8bc16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponController: {fileID: 2658825238634068750}
 --- !u!114 &3627660020212214118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11742,7 +11755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4bf88a35773c949bce3eb21802579c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedForce: 200000
+  _speedForce: 50000
   _speedRotation: 25
   energyDecayRate: 20
 --- !u!114 &2511575350588810524
@@ -11758,19 +11771,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 1000
---- !u!114 &3429908263805911436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040180727007795610}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8c56fc5be72bf43afc2508cfa8bc16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WeaponController: {fileID: 2658825238634068750}
 --- !u!54 &5625739484875177652
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13474,7 +13474,7 @@ GameObject:
   - component: {fileID: 3082515484652596797}
   - component: {fileID: 5843474724688179652}
   - component: {fileID: 9164063099171467857}
-  - component: {fileID: 2332695798773595449}
+  - component: {fileID: 5279728870777714610}
   m_Layer: 0
   m_Name: Pantalla Interactable
   m_TagString: Untagged
@@ -13568,7 +13568,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.005739533, y: 0.0056360685, z: 0.0042277765}
   m_Center: {x: 0.004983375, y: 0.000024907711, z: 0.005421348}
---- !u!114 &2332695798773595449
+--- !u!114 &5279728870777714610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13577,13 +13577,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5985566915679133970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d006c3d1d8b3ef40aa1e50ee6cf1d33, type: 3}
+  m_Script: {fileID: 11500000, guid: 506470c049ad1db478a1548d2f906ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
-  _target: {fileID: 0}
+  _target: {fileID: 5672707069889839904}
   _interactableInfo:
-    Action: Drive
+    Action: 
     Type: 
 --- !u!1 &5988851613936762648
 GameObject:

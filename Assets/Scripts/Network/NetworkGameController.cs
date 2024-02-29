@@ -35,8 +35,17 @@ namespace Deforestation.Network
 
 		public void InitializeMachine( Transform follow, MachineController machine)
 		{
+			if (_machine != null)
+			{
+				_machine.HealthSystem.OnHealthChanged -= _uiController.UpdateMachineHealth;
+			}
+
 			_machineFollow = follow;
 			_machine = machine;
+
+			_machine.HealthSystem.OnHealthChanged += _uiController.UpdateMachineHealth;
+			//Para refrescar la UI
+			_machine.HealthSystem.TakeDamage(0);
 		}
 
 		#endregion

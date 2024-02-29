@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3948050961571534576}
   - component: {fileID: 1515362827680441871}
   - component: {fileID: 3326944338237586597}
+  - component: {fileID: 2181077740337105453}
   m_Layer: 0
   m_Name: CubeTreeDetector
   m_TagString: Tree
@@ -90,3 +91,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2181077740337105453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892976754920844703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661c192f6b66d0048b06e545df478a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fire: {fileID: 0}

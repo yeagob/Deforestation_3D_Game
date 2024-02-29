@@ -1463,6 +1463,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage Multiplayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2021249599442777617, guid: 798492b75547dec4a809a150dcd0db77,
+        type: 3}
+      propertyPath: _treeDetectionPrefab
+      value: 
+      objectReference: {fileID: 2181077740337105453, guid: 3e6eebddf66264c4290f453c6db7b389,
+        type: 3}
     - target: {fileID: 3721928628444254172, guid: 798492b75547dec4a809a150dcd0db77,
         type: 3}
       propertyPath: m_LocalPosition.x

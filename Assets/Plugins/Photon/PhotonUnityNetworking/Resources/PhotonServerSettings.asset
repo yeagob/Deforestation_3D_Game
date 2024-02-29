@@ -42,6 +42,8 @@ MonoBehaviour:
   - RPC_SpawnPlayer
   - RPC_RecivePont
   - RPC_SpawnPoint
+  - RefreshHealth
+  - OthersShoot
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
