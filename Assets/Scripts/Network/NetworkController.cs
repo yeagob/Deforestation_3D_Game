@@ -47,7 +47,7 @@ namespace Deforestation.Network
 		private void SpawnMe(Vector3 spawnPoint)
 		{
 			PhotonNetwork.Instantiate("PlayerMultiplayer", spawnPoint, Quaternion.identity);
-			PhotonNetwork.Instantiate("TheMachine", spawnPoint, Quaternion.identity);
+			PhotonNetwork.Instantiate("TheMachine", spawnPoint + Vector3.back * 7, Quaternion.identity);
 			_uIGameController.enabled = true;
 		}
 

@@ -42,11 +42,25 @@ namespace Deforestation.Network
 				_gameController.InitializePlayer(_health, _controller, _inventory, _interactions, _playerFollow);
 				_health.OnHealthChanged += Hit;
 				_health.OnDeath += Die;
+				_health.enabled = true;
+				_inventory.enabled = true;
+				_interactions.enabled = true;
+				_fps.enabled = true;
+				_controller.enabled = true;
+
+				Invoke(nameof(AddInitialCrystals), 1);
+				
 			}
 			else
 			{
 				DisconectPlayer();
 			}
+		}
+
+		private void AddInitialCrystals()
+		{
+			_inventory.AddRecolectable(RecolectableType.SuperCrystal, 7);
+			_inventory.AddRecolectable(RecolectableType.HyperCrystal, 3);
 		}
 
 		private void DisconectPlayer()
@@ -90,7 +104,7 @@ namespace Deforestation.Network
 
 		private void Hit(float obj)
 		{
-			throw new NotImplementedException();
+			_anim.SetTrigger("Hit");
 		}
 		#endregion
 

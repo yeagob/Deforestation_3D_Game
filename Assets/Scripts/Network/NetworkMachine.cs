@@ -25,6 +25,9 @@ namespace Deforestation.Network
 			{
 				_gameController.InitializeMachine(_machineFollow, _machine);
 				_gameController.gameObject.SetActive(true);
+				_machine.enabled = true;
+				_machine.WeaponController.enabled = true;
+				_machine.GetComponent<MachineMovement>().enabled = true;
 			}
 			else
 			{
