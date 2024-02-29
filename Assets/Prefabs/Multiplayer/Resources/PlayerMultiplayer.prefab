@@ -95,6 +95,7 @@ MonoBehaviour:
   _inputs: {fileID: 2835584815405000847}
   _inputsPlayer: {fileID: 2123068703024616684}
   _3dAvatar: {fileID: 4344450737335495492}
+  _playerFollow: {fileID: 1281359845166100392}
 --- !u!114 &7917326169466648072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +346,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5908830448447852310}
+  - {fileID: 2391117818064167985}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -385,7 +387,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9b25c4c012010364d85389a48cedb1a5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.426
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b25c4c012010364d85389a48cedb1a5,
         type: 3}
@@ -425,7 +427,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9b25c4c012010364d85389a48cedb1a5,
         type: 3}
       propertyPath: m_Name
-      value: Ch50_nonPBR
+      value: Avatar
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b25c4c012010364d85389a48cedb1a5,
         type: 3}
@@ -435,7 +437,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9b25c4c012010364d85389a48cedb1a5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2149460682292786943}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9b25c4c012010364d85389a48cedb1a5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2391117818064167985}
   m_SourcePrefab: {fileID: 100100000, guid: 9b25c4c012010364d85389a48cedb1a5, type: 3}
 --- !u!4 &3963526395902079486 stripped
 Transform:
@@ -449,3 +459,54 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3498170171348866581}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2149460682292786943
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344450737335495492}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec2dd49b19544fa458afd344b41ac159, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2391117818064167985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344450737335495492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 1
+    Name: Run
+  - Type: 9
+    SynchronizeType: 1
+    Name: Hit
+  - Type: 9
+    SynchronizeType: 1
+    Name: Die
+  - Type: 9
+    SynchronizeType: 1
+    Name: Jump
+  m_SynchronizeLayers:
+  - SynchronizeType: 1
+    LayerIndex: 0

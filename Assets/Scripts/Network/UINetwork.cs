@@ -8,7 +8,6 @@ namespace Deforestation.Network
 	{
 		#region Fields
 		[SerializeField] private GameObject _connectingPanel;
-		[SerializeField] private UIGameController _uIGameController;
 
 		#endregion
 
@@ -25,7 +24,6 @@ namespace Deforestation.Network
 		public void LoadingComplete()
 		{
 			_connectingPanel.SetActive(false);
-			_uIGameController.enabled = true;
 		}
 		#endregion
 

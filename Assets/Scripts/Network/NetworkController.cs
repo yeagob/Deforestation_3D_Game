@@ -1,5 +1,8 @@
+using Deforestation.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Deforestation.Network
@@ -8,6 +11,12 @@ namespace Deforestation.Network
 	public class NetworkController : MonoBehaviourPunCallbacks
 	{
 		[SerializeField] private UINetwork _ui;
+		[SerializeField] private UIGameController _uIGameController;
+
+		//Master
+		[SerializeField] private List <Transform> _spawnPoints; // Arreglo de tus puntos de spawn.
+		private bool _waitingForSpawn = false;
+
 		void Start()
 		{
 			PhotonNetwork.ConnectUsingSettings();
@@ -20,8 +29,43 @@ namespace Deforestation.Network
 
 		public override void OnJoinedRoom()
 		{
-			PhotonNetwork.Instantiate("PlayerMultiplayer", new Vector3(1570, 168.98f, 547), Quaternion.identity );
+			if (PhotonNetwork.IsMasterClient)
+			{				
+				SpawnMe(_spawnPoints[0].position);
+				_spawnPoints.RemoveAt(0);
+			}
+			else
+			{
+				_waitingForSpawn = true;
+				photonView.RPC("RPC_SpawnPoint", RpcTarget.MasterClient);
+
+			}
+			
 			_ui.LoadingComplete();
+		}
+
+		private void SpawnMe(Vector3 spawnPoint)
+		{
+			PhotonNetwork.Instantiate("PlayerMultiplayer", spawnPoint, Quaternion.identity);
+			PhotonNetwork.Instantiate("TheMachine", spawnPoint, Quaternion.identity);
+			_uIGameController.enabled = true;
+		}
+
+		[PunRPC]
+		void RPC_SpawnPoint()
+		{			
+			photonView.RPC("RPC_RecivePont", RpcTarget.Others, _spawnPoints[0].position);
+			_spawnPoints.RemoveAt(0);
+		}
+
+		[PunRPC]
+		void RPC_RecivePont(Vector3 spawnPos)
+		{
+			if (_waitingForSpawn)
+			{
+				_waitingForSpawn = false;
+				SpawnMe(spawnPos);
+			}
 		}
 	}
 }
