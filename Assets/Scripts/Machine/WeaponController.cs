@@ -7,7 +7,6 @@ namespace Deforestation.Machine.Weapon
 	{
 		#region Properties
 		public Action OnMachineShoot;
-
 		#endregion
 
 		#region Fields
@@ -20,9 +19,16 @@ namespace Deforestation.Machine.Weapon
 		#endregion
 
 		#region Unity Callbacks
+		private void Awake()
+		{
+		}
 
 		void Update()
 		{
+			//Si no estamos conduciendo no controlamos esto. 
+			if (!GameController.Instance.MachineModeOn)
+				return;
+
 			Ray ray = GameController.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 
